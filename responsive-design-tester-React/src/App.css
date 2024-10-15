@@ -1,35 +1,23 @@
-* {
+*{
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
+
 .container {
   position: relative;
-  background-color: rgb(161, 157, 157);
-  max-height: 100vh;
-  justify-content: center;
+  min-height: 100vh;
+  background-color: rgba(161, 157, 157, 0.5);
 }
 .side {
-  position: relative;
-  padding-top: 8rem;
   box-shadow: 0 -1px 15px 2px rgb(0 0 0 / 0.7);
 }
 .input-area {
   width: 80vw;
-  transform: translateY(-290px);
-}
-.input-url {
-  background-color: rgb(202, 222, 223);
-  color: rgb(71, 69, 69);
-  padding: 10px;
-  padding-right: 0;
-  border: none;
-  outline: none;
-  border-radius: 5px;
-  width: 52rem;
+  margin-bottom: 5rem;
 }
 .submenu ul {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   color: rgb(255, 255, 255);
@@ -52,19 +40,18 @@
 }
 main {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 8rem;
-  margin-left: 2rem;
   overflow: auto;
   overflow-x: auto;
 }
-.content {
+
+/* .content {
   scroll-behavior: smooth;
   scrollbar-width: 2rem;
   overflow-x: auto;
   overflow-y: auto;
   max-height: max-content;
   max-width: max-content;
-  background-color: rgb(255, 255, 255);
-}
+}  */

@@ -96,7 +96,7 @@ const App = () => {
   return (
     <>
       <div className="container mx-auto max-w-screen-xl flex flex-col lg:flex-row overflow-hidden rounded-lg">
-        <div className="side bg-gray-400 fixed rounded-none  w-40 shadow-xl min-h-screen top-0 left-0 bottom-0">
+        <div className="side bg-gray-400 pt-32 fixed w-40 min-h-screen">
           <button
             className="flex flex-col justify-between items-center"
             onClick={() => toggleSidebar("mobile")}
@@ -119,21 +119,21 @@ const App = () => {
           </button>
         </div>
 
-        <main className="flex-1 py-16 w-screen">
-          <div className="input-area fixed mt-4 flex flex-row items-center">
+        <main className="flex-1 mt-62 py-16 w-screen">
+          <div className="input-area fixed ml-32 flex flex-row items-center top-10 left-20">
             <input
               type="text"
               value={inputUrl}
               placeholder="Enter URL"
-              className="input-url"
+              className="input-url bg-sky-200 text-gray-700 p-2 border-none outline-none rounded-lg w-full max-w-2xl"
               onChange={(e) => setInputUrl(e.target.value)}
             />
             <button
               onClick={() => dropDownPage(inputUrl)}
-              className="bg-black hover:bg-black-900 text-white w-11 h-11 rounded"
+              className="bg-black hover:bg-black-900 text-white ml-4 w-10 h-10 rounded"
             >Go</button>
           </div>
-          <div className="content mt-10 overflow-hidden max-h-auto">
+          <div className="content mt-8 max-h-full overflow-auto">
             <iframe
               src={storedUrl}
               width={defaultWidth}
@@ -143,10 +143,10 @@ const App = () => {
             />
 
           </div>
-          <div className="mini-sidebar">
-            {clicked.mobile && <div className="submenu"><ul>{renderDeviceList("mobile")}</ul></div>}
-            {clicked.desktop && <div className="submenu"><ul>{renderDeviceList("desktop")}</ul></div>}
-            {clicked.tablet && <div className="submenu"><ul>{renderDeviceList("tablet")}</ul></div>}
+          <div className="mini-sidebar fixed">
+            {clicked.mobile && <div className="submenu "><ul>{renderDeviceList("mobile")}</ul></div>}
+            {clicked.desktop && <div className="submenu "><ul>{renderDeviceList("desktop")}</ul></div>}
+            {clicked.tablet && <div className="submenu "><ul>{renderDeviceList("tablet")}</ul></div>}
           </div>
         </main>
       </div>
