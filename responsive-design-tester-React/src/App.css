@@ -11,13 +11,12 @@
 }
 .side {
   position: relative;
-  padding-top: 15rem;
+  padding-top: 8rem;
   box-shadow: 0 -1px 15px 2px rgb(0 0 0 / 0.7);
 }
 .input-area {
-  position: fixed;
-  position: absolute;
-  transform: translate(1rem, -26rem);
+  width: 80vw;
+  transform: translateY(-290px);
 }
 .input-url {
   background-color: rgb(202, 222, 223);
@@ -25,6 +24,7 @@
   padding: 10px;
   padding-right: 0;
   border: none;
+  outline: none;
   border-radius: 5px;
   width: 52rem;
 }
@@ -66,4 +66,5 @@ main {
   overflow-y: auto;
   max-height: max-content;
   max-width: max-content;
+  background-color: rgb(255, 255, 255);
 }
