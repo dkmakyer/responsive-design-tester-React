@@ -56,7 +56,6 @@ const App = () => {
 
   function toggleSidebar(deviceType) {
     setClicked(prevState => ({
-      ...prevState, [deviceType]: !prevState[deviceType], // dynamically toggles the device without manually coding for all device types.
       mobile: deviceType === "mobile" ? !prevState.mobile : false,
       desktop: deviceType === "desktop" ? !prevState.desktop : false,
       tablet: deviceType === "tablet" ? !prevState.tablet : false
@@ -95,7 +94,7 @@ const App = () => {
 
   return (
     <>
-      <div className="container mx-auto max-w-screen-xl flex flex-col lg:flex-row overflow-hidden rounded-lg">
+      <div className="container">
         <div className="side bg-gray-400 pt-32 fixed w-40 min-h-screen">
           <button
             className="flex flex-col justify-between items-center"
@@ -119,28 +118,30 @@ const App = () => {
           </button>
         </div>
 
-        <main className="flex-1 mt-62 py-16 w-screen">
-          <div className="input-area fixed ml-32 flex flex-row items-center top-10 left-20">
-            <input
-              type="text"
-              value={inputUrl}
-              placeholder="Enter URL"
-              className="input-url bg-sky-200 text-gray-700 p-2 border-none outline-none rounded-lg w-full max-w-2xl"
-              onChange={(e) => setInputUrl(e.target.value)}
-            />
-            <button
-              onClick={() => dropDownPage(inputUrl)}
-              className="bg-black hover:bg-black-900 text-white ml-4 w-10 h-10 rounded"
-            >Go</button>
-          </div>
-          <div className="content mt-8 max-h-full overflow-auto">
-            <iframe
-              src={storedUrl}
-              width={defaultWidth}
-              height={defaultHeight}
-              title="drop-down-page"
-            style={{ border: "none" }}
-            />
+        <main className="flex-1 mt-62 p-20 w-screen">
+          <div className="content-area">
+            <div className="input-area fixed ml-44 flex flex-row items-center top-10 left-20">
+              <input
+                type="text"
+                value={inputUrl}
+                placeholder="Enter URL"
+                className="input-url bg-sky-200 text-gray-700 p-2 border-none outline-none rounded-lg w-full max-w-3xl"
+                onChange={(e) => setInputUrl(e.target.value)}
+              />
+              <button
+                onClick={() => dropDownPage(inputUrl)}
+                className="bg-black hover:bg-gray-900 text-white ml-4 w-10 h-10 rounded"
+              >Go</button>
+            </div>
+            <div className="content ml-36 max-h-full">
+              <iframe
+                src={storedUrl}
+                width={defaultWidth || 1920}
+                height={defaultHeight || 1080}
+                title="drop-down-page"
+                style={{border: "none"}}
+              />
+            </div>
 
           </div>
           <div className="mini-sidebar fixed">
