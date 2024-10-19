@@ -144,7 +144,7 @@ const App = () => {
             </div>
 
           </div>
-          <div className="mini-sidebar fixed">
+          <div className="mini-sidebar">
             {clicked.mobile && <div className="submenu "><ul>{renderDeviceList("mobile")}</ul></div>}
             {clicked.desktop && <div className="submenu "><ul>{renderDeviceList("desktop")}</ul></div>}
             {clicked.tablet && <div className="submenu "><ul>{renderDeviceList("tablet")}</ul></div>}
